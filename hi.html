@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to replace "blue" with "red" in the paragraph below:</p>
+
+<p id="demo">Mr Blue has a blue house and a blue car.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var str = document.getElementById("demo").innerHTML; 
+    var res = str.replace(/ /g, "+");
+    var temp = "https://s3-ap-southeast-1.amazonaws.com/piedpiper/spike/" + res;
+    
+    var url = temp;
+    
+	function shortify(url)
+	 {
+  		var auth_token = getUrlShorteningRequestParams(url);
+  		var urlEscaped = escape(url).replace(/\+/g,"%2B");
+
+  		xmlhttp.open("POST", "http://goo.gl/api/url?user=toolbar@google.com&url=" + urlEscaped+ "&auth_token=" + auth_token, false);
+  		xmlhttp.onload = xmlhttpLoad;
+  		xmlhttp.send(null);
+	}
+	
+</script>
+
+</body>
+</html>
